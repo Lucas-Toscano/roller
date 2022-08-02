@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roller</title>
+    <!-- <link rel="stylesheet" href="assets/css/styles.css" /> -->
+  </head>
+  <body>
+    <div class="attributes">
+      <div class="modifier">
+        <p>Modificador:</p>
+        <select name="modifier" id="modifier">
+          <option value="-1">-1</option>
+          <option value="0">0</option>
+          <option value="+1">+1</option>
+          <option value="+2">+2</option>
+          <option value="+3">+3</option>
+          <option value="+4">+4</option>
+          <option value="+5">+5</option>
+        </select>
+      </div>
+      <div class="bonus">
+        <p>Bônus:</p>
+        <select name="bonus" id="bonus">
+          <option value="-1">-1</option>
+          <option value="0">0</option>
+          <option value="+1">+1</option>
+          <option value="+2">+2</option>
+          <option value="+3">+3</option>
+          <option value="+4">+4</option>
+          <option value="+5">+5</option>
+        </select>
+      </div>
+      <div class="additionalDice">
+        <p>Dado adicional:</p>
+        <select name="additionalDice" id="additionalDice">
+          <option value="none">Nenhum</option>
+          <option value="d4">d4</option>
+          <option value="d6">d6</option>
+          <option value="d8">d8</option>
+          <option value="d10">d10</option>
+          <option value="d12">d12</option>
+          <option value="d20">d20</option>
+        </select>
+      </div>
+      <button class="rollDice">Rolar o dado</button>
+    </div>
+    <div class="result">
+      <span class="rolledNumber"></span>
+    </div>
+    <div class="alert">
+      <span class="diceAlert"></span>
+    </div>
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>

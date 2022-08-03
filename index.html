@@ -4,54 +4,127 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roller</title>
-    <!-- <link rel="stylesheet" href="assets/css/styles.css" /> -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Roller - Lucas Toscano</title>
   </head>
   <body>
-    <div class="attributes">
-      <div class="modifier">
-        <p>Modificador:</p>
-        <select name="modifier" id="modifier">
-          <option value="-1">-1</option>
-          <option value="0">0</option>
-          <option value="+1">+1</option>
-          <option value="+2">+2</option>
-          <option value="+3">+3</option>
-          <option value="+4">+4</option>
-          <option value="+5">+5</option>
-        </select>
+    <div class="w-full flex flex-col md:flex-row">
+      <div class="attributes p-4 flex-1 text-center text-2xl sm:text-4xl">
+        <h1>Rolagem de Ataque & Teste de Resistência</h1>
+        <div class="modifier w-full border-t-2 border-black">
+          <p>Modificador:</p>
+          <select onChange="modifier()" name="modifier" id="modifier">
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="+5">+5</option>
+          </select>
+        </div>
+        <div class="bonus">
+          <p>Bônus:</p>
+          <select onChange="bonus()" name="bonus" id="bonus">
+            <!-- <option value="-1">-1</option> -->
+            <option value="0">0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="+5">+5</option>
+          </select>
+        </div>
+        <div class="additionalDice">
+          <p>Dado adicional:</p>
+          <select name="additionalDice" id="additionalDice">
+            <option value="none">Nenhum</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+            <option value="d20">d20</option>
+          </select>
+        </div>
+        <button class="rollDice transition ease-in-out m-4 px-4 py-4 rounded-3xl shadow-md bg-blue-500 hover:scale-125 hover:bg-indigo-500 duration-300 hover:shadow-2xl">Roller!</button>
+        <div class="diceResult w-2/3 mx-auto h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
+          <h1>Resultado:</h1>
+          <div class="result">
+            <span class="rolledNumber"></span>
+          </div>
+          <div class="alert">
+            <span class="diceAlert"></span>
+          </div>
+        </div>
       </div>
-      <div class="bonus">
-        <p>Bônus:</p>
-        <select name="bonus" id="bonus">
-          <option value="-1">-1</option>
-          <option value="0">0</option>
-          <option value="+1">+1</option>
-          <option value="+2">+2</option>
-          <option value="+3">+3</option>
-          <option value="+4">+4</option>
-          <option value="+5">+5</option>
-        </select>
-      </div>
-      <div class="additionalDice">
-        <p>Dado adicional:</p>
-        <select name="additionalDice" id="additionalDice">
-          <option value="none">Nenhum</option>
-          <option value="d4">d4</option>
-          <option value="d6">d6</option>
-          <option value="d8">d8</option>
-          <option value="d10">d10</option>
-          <option value="d12">d12</option>
-          <option value="d20">d20</option>
-        </select>
-      </div>
-      <button class="rollDice">Rolar o dado</button>
-    </div>
-    <div class="result">
-      <span class="rolledNumber"></span>
-    </div>
-    <div class="alert">
-      <span class="diceAlert"></span>
+
+      <!-- <div class="damage p-4 flex-1 text-center text-2xl">
+        <h1>Rolagem de Dano:</h1>
+        <div class="damageDice">
+          <p>Dado de dano:</p>
+          <select name="damage" id="damage">
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+          </select>
+        </div>
+        <div class="dmgModifier">
+          <p>Modificador:</p>
+          <select name="modifier" id="dmgModifier">
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="+5">+5</option>
+          </select>
+        </div>
+        <div class="dmgAdditionalDice">
+          <p>Dado adicional:</p>
+          <select name="dmgAdditionalDice" id="dmgAdditionalDice">
+            <option value="none">Nenhum</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+            <option value="d20">d20</option>
+          </select>
+        </div>
+        <div class="numAdditionalDice">
+          <p>Nº de dados adicionais:</p>
+          <select name="numAdditionalDice" id="numAdditionalDice">
+            <option value="none">Nenhum</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <button class="rollDice m-4 px-2 py-4 rounded-3xl bg-gray-600">Rolar o dado</button>
+        <div class="diceResult bg-red-500 w-full">
+          <h1>Rolagem:</h1>
+          <div class="result">
+            <span class="rolledNumber"></span>
+          </div>
+          <div class="alert">
+            <span class="diceAlert"></span>
+          </div>
+        </div>
+      </div> -->
     </div>
     <script src="/assets/js/app.js"></script>
   </body>

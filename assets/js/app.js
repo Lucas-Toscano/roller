@@ -1,4 +1,15 @@
 // const d20 = Math.floor(Math.random() * 20);
+function modifier() {
+    const mod = document.getElementById("modifier").value;
+}
+
+const modifi = modifier();
+const bonifi = bonus();
+
+function bonus() {
+  const bon = document.getElementById("bonus").value;
+}
+
 const diceResult = (min, max) => Math.floor(Math.random() *(max - min) + 1);
 
 const button = document.querySelector('.rollDice');
@@ -16,7 +27,11 @@ button.onclick = function() {
     diceAlert.innerHTML = '';
   }
 
+  if(modifier(modifi) === '0' && bonus(bonifi) === '0') {
+    
+  }
   result.innerHTML = `${diceRoll}`;
+  
 };
 
 // // ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

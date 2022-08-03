@@ -14,33 +14,46 @@
     <div class="w-full flex flex-col md:flex-row">
       <div class="attributes p-4 flex-1 text-center text-2xl sm:text-4xl">
         <h1>Rolagem de Ataque & Teste de Resistência</h1>
-        <div class="modifier w-full border-t-2 border-black">
+        <div class="w-full border-t-2 border-black">
           <p>Modificador:</p>
-          <select onChange="modifier()" name="modifier" id="modifier">
+          <select class="modifier" onChange="" name="modifier" id="modifier">
             <option value="-1">-1</option>
-            <option value="0">0</option>
-            <option value="+1">+1</option>
-            <option value="+2">+2</option>
-            <option value="+3">+3</option>
-            <option value="+4">+4</option>
-            <option value="+5">+5</option>
+            <option value="0">+0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
           </select>
         </div>
-        <div class="bonus">
-          <p>Bônus:</p>
-          <select onChange="bonus()" name="bonus" id="bonus">
+        <div class="profBonu">
+          <p>Bônus de proficiência:</p>
+          <select class="profBonus" onChange="" name="profBonus" id="profBonus">
             <!-- <option value="-1">-1</option> -->
             <option value="0">0</option>
-            <option value="+1">+1</option>
-            <option value="+2">+2</option>
-            <option value="+3">+3</option>
-            <option value="+4">+4</option>
-            <option value="+5">+5</option>
+            <option value="0">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+            <option value="6">+6</option>
+          </select>
+        </div>
+        <div class="bonu">
+          <p>Bônus adicional:</p>
+          <select class="bonus" onChange="" name="bonus" id="bonus">
+            <!-- <option value="-1">-1</option> -->
+            <option value="0">0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
           </select>
         </div>
         <div class="additionalDice">
           <p>Dado adicional:</p>
-          <select name="additionalDice" id="additionalDice">
+          <select onChange="" name="additionalDice" id="additionalDice">
             <option value="none">Nenhum</option>
             <option value="d4">d4</option>
             <option value="d6">d6</option>
@@ -54,7 +67,10 @@
         <div class="diceResult w-2/3 mx-auto h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
           <h1>Resultado:</h1>
           <div class="result">
-            <span class="rolledNumber"></span>
+            <span class="sum"></span>
+          </div>
+          <div class="totalResult">
+            <span class="rolledNumber text-4xl"></span>
           </div>
           <div class="alert">
             <span class="diceAlert"></span>

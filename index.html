@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/d20 gif.gif">
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
@@ -13,60 +14,83 @@
   <body>
     <div class="w-full flex flex-col md:flex-row">
       <div class="attributes p-4 flex-1 text-center text-2xl sm:text-4xl">
-        <h1>Rolagem de Ataque & Teste de Resistência</h1>
-        <div class="w-full border-t-2 border-black">
-          <p>Modificador:</p>
-          <select class="modifier" onChange="" name="modifier" id="modifier">
-            <option value="-1">-1</option>
-            <option value="0">+0</option>
-            <option value="1">+1</option>
-            <option value="2">+2</option>
-            <option value="3">+3</option>
-            <option value="4">+4</option>
-            <option value="5">+5</option>
-          </select>
+        <div class="border-b-4 border-blue-500">
+          <h1>Rolagem de Ataque & Teste de Resistência</h1>
         </div>
-        <div class="profBonu">
-          <p>Bônus de proficiência:</p>
-          <select class="profBonus" onChange="" name="profBonus" id="profBonus">
-            <!-- <option value="-1">-1</option> -->
-            <option value="0">0</option>
-            <option value="0">+1</option>
-            <option value="2">+2</option>
-            <option value="3">+3</option>
-            <option value="4">+4</option>
-            <option value="5">+5</option>
-            <option value="6">+6</option>
-          </select>
+        <div class="flex flex-col sm:flex-row mx-auto text-center">
+          <div class="flex-1">
+            <p>Modificador:</p>
+            <select class="modifier" onChange="" name="modifier" id="modifier">
+              <option value="-1">-1</option>
+              <option value="0">+0</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+            </select>
+          </div>
+          <div class="profBonu flex-1">
+            <p>Bônus de proficiência:</p>
+            <select
+              class="profBonus"
+              onChange=""
+              name="profBonus"
+              id="profBonus"
+            >
+              <!-- <option value="-1">-1</option> -->
+              <option value="0">0</option>
+              <option value="0">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+              <option value="6">+6</option>
+            </select>
+          </div>
         </div>
-        <div class="bonu">
-          <p>Bônus adicional:</p>
-          <select class="bonus" onChange="" name="bonus" id="bonus">
-            <!-- <option value="-1">-1</option> -->
-            <option value="0">0</option>
-            <option value="1">+1</option>
-            <option value="2">+2</option>
-            <option value="3">+3</option>
-            <option value="4">+4</option>
-            <option value="5">+5</option>
-          </select>
+        <div class="flex flex-col sm:flex-row mx-auto text-center">
+          <div class="bonu flex-1">
+            <p>Bônus adicional:</p>
+            <select class="bonus" onChange="" name="bonus" id="bonus">
+              <!-- <option value="-1">-1</option> -->
+              <option value="0">0</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+            </select>
+          </div>
+
+          <div class="addDice flex-1">
+            <p>Dado adicional:</p>
+            <select
+              class="additionalDice"
+              onChange=""
+              name="additionalDice"
+              id="additionalDice"
+            >
+              <option value="0">Nenhum</option>
+              <option value="d4">d4</option>
+              <option value="d6">d6</option>
+              <option value="d8">d8</option>
+              <option value="d10">d10</option>
+              <option value="d12">d12</option>
+              <option value="d20">d20</option>
+            </select>
+          </div>
         </div>
-        <div class="additionalDice">
-          <p>Dado adicional:</p>
-          <select onChange="" name="additionalDice" id="additionalDice">
-            <option value="none">Nenhum</option>
-            <option value="d4">d4</option>
-            <option value="d6">d6</option>
-            <option value="d8">d8</option>
-            <option value="d10">d10</option>
-            <option value="d12">d12</option>
-            <option value="d20">d20</option>
-          </select>
-        </div>
-        <button class="rollDice transition ease-in-out m-4 px-4 py-4 rounded-3xl shadow-md bg-blue-500 hover:scale-125 hover:bg-indigo-500 duration-300 hover:shadow-2xl">Roller!</button>
-        <div class="diceResult w-2/3 mx-auto h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
+        <button
+          class="rollDice transition ease-in-out m-4 px-4 py-4 rounded-3xl shadow-md bg-blue-500 hover:scale-125 hover:bg-blue-300 hover:text-white duration-300 hover:shadow-2xl"
+        >
+          Roller!
+        </button>
+        <div
+          class="diceResult w-2/3 mx-auto h-14 "
+        >
           <h1>Resultado:</h1>
-          <div class="result">
+          <div class="result text-lg sm:text-4xl">
             <span class="sum"></span>
           </div>
           <div class="totalResult">
